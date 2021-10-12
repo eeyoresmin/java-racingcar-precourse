@@ -22,8 +22,8 @@ public class CarsTest {
 
 	@Test
 	void 자동차_거리순_정렬() {
-		cars.getCar(2).move();
-		cars.getCar(2).move();
+		cars.getCar(2).getCarPosition().movePosition();
+		cars.getCar(2).getCarPosition().movePosition();
 		cars.sortCars();
 
 		assertThat(cars.getCar(0).getCarPosition().getPosition()).isEqualTo(2);
@@ -45,7 +45,7 @@ public class CarsTest {
 		cars.getCar(1).getCarPosition().movePosition();
 		cars.getCar(1).getCarPosition().movePosition();
 
-
+		resultGame.aggregateWinners();
 		assertThat(resultGame.displayResult()).isEqualTo("최종 우승자는 나 입니다.");
 	}
 
@@ -65,7 +65,6 @@ public class CarsTest {
 		cars.getCar(1).getCarPosition().movePosition();
 		cars.getCar(1).getCarPosition().movePosition();
 		cars.getCar(1).getCarPosition().movePosition();
-
 
 		resultGame.aggregateWinners();
 		assertThat(resultGame.displayResult()).isEqualTo("최종 우승자는 가,나 입니다.");
