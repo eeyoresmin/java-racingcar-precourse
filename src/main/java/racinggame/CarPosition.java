@@ -1,6 +1,7 @@
 package racinggame;
 
 public class CarPosition {
+	private static char DISPLAY_BAR = '-';
 	private int position;
 
 	public CarPosition() {
@@ -18,7 +19,7 @@ public class CarPosition {
 	public String displayPosition() {
 		StringBuilder bar = new StringBuilder();
 		for (int i = 0; i < position; i++) {
-			bar.append("-");
+			bar.append(DISPLAY_BAR);
 		}
 
 		return bar.toString();
