@@ -1,7 +1,7 @@
 package racinggame;
 
 public class CarPosition {
-	private static char DISPLAY_BAR = '-';
+	private static final char DISPLAY_BAR = '-';
 	private int position;
 
 	public CarPosition() {

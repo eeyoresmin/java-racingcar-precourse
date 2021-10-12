@@ -27,4 +27,12 @@ public class CarTest {
 		car.move();
 		assertThat(car.getCarPosition().getPosition()).isEqualTo(1);
 	}
+
+	@Test
+	@DisplayName("자동차 상태 출력")
+	void 자동차_상태() {
+		car.getCarPosition().movePosition();
+		car.getCarPosition().movePosition();
+		assertThat(car.displayCarStatus()).isEqualTo("Test : --");
+	}
 }

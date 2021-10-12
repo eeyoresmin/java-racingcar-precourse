@@ -1,14 +1,11 @@
 package racinggame;
 
-import java.util.regex.Pattern;
-
-import jdk.nashorn.internal.runtime.regexp.joni.Regex;
-
 public class InputCarNames {
-	private final String WHITESPACE = "\\s";
-	private final String NON_WHITESPACE = "";
-	private final String COMMA = ",";
-	private final String DOUBLE_COMMA = ",,";
+	private static final String WHITESPACE = "\\s";
+	private static final String NON_WHITESPACE = "";
+	private static final String COMMA = ",";
+	private static final String DOUBLE_COMMA = ",,";
+	private static final String ERROR_MSG = "[ERROR] 빈 이름은 허용하지 않습니다.";
 
 	private String inputCarNames;
 
@@ -18,19 +15,23 @@ public class InputCarNames {
 
 	public InputCarNames(String inputCarNames) {
 		if (inputCarNames.length() == 0) {
-			throw new IllegalArgumentException("빈 이름은 허용하지 않습니다.");
+			throw new IllegalArgumentException(ERROR_MSG);
 		}
 
 		inputCarNames = inputCarNames.replaceAll(WHITESPACE, NON_WHITESPACE);
 
 		if (inputCarNames.endsWith(COMMA)) {
-			throw new IllegalArgumentException("빈 이름은 허용하지 않습니다.");
+			throw new IllegalArgumentException(ERROR_MSG);
 		}
 
 		if (inputCarNames.contains(DOUBLE_COMMA)) {
-			throw new IllegalArgumentException("빈 이름은 허용하지 않습니다.");
+			throw new IllegalArgumentException(ERROR_MSG);
 		}
 
 		this.inputCarNames = inputCarNames;
+	}
+
+	public String[] changeNameList() {
+		return inputCarNames.split(COMMA);
 	}
 }
