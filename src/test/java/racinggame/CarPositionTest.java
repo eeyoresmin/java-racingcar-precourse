@@ -30,18 +30,18 @@ public class CarPositionTest {
 
 	@Test
 	void 전진_후_표시() {
-		assertThat(carPosition.toString()).isEqualTo("");
+		assertThat(carPosition.displayPosition()).isEqualTo("");
 
 		carPosition.movePosition();
 
-		assertThat(carPosition.toString()).isEqualTo("-");
+		assertThat(carPosition.displayPosition()).isEqualTo("-");
 
 		carPosition.movePosition();
 
-		assertThat(carPosition.toString()).isEqualTo("--");
+		assertThat(carPosition.displayPosition()).isEqualTo("--");
 
 		carPosition.movePosition();
 
-		assertThat(carPosition.toString()).isEqualTo("---");
+		assertThat(carPosition.displayPosition()).isEqualTo("---");
 	}
 }

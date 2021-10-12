@@ -15,8 +15,7 @@ public class CarPosition {
 		position += 1;
 	}
 
-	@Override
-	public String toString() {
+	public String displayPosition() {
 		StringBuilder bar = new StringBuilder();
 		for (int i = 0; i < position; i++) {
 			bar.append("-");
