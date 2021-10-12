@@ -34,4 +34,12 @@ public class Car {
 	public String displayCarStatus() {
 		return String.format(DISPLAY_FORMAT, carName.getName(), carPosition.displayPosition());
 	}
+
+	public String getWinnerName(FarPosition farPosition) {
+		if (farPosition.isFarPosition(carPosition)) {
+			return carName.getName();
+		}
+
+		return "";
+	}
 }
