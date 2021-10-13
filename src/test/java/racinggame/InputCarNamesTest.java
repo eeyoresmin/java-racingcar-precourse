@@ -32,18 +32,4 @@ public class InputCarNamesTest {
 			() -> new InputCarNames("A,B, ,D,E")
 		);
 	}
-
-	@Test
-	void 마지막_빈_자동차_이름() {
-		assertThatExceptionOfType(IllegalArgumentException.class).isThrownBy(
-			() -> new InputCarNames("A,B,C,D,")
-		);
-	}
-
-	@Test
-	void 마지막_공란_자동차_이름() {
-		assertThatExceptionOfType(IllegalArgumentException.class).isThrownBy(
-			() -> new InputCarNames("A,B,C,D, ")
-		);
-	}
 }
