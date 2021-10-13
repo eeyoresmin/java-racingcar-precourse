@@ -38,7 +38,7 @@ public class Cars {
 		for (Car car: cars) {
 			car.move();
 			System.out.println(car.displayCarStatus());
-			System.out.println();
 		}
+		System.out.println();
 	}
 }
