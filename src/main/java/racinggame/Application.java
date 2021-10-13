@@ -7,15 +7,8 @@ public class Application {
         // TODO 자동차 경주 게임 구현
         Cars cars = new Cars(racinggameService.inputNames());
 
-        MoveTime moveTime = racinggameService.inputMoveTime();
+        racinggameService.playGame(cars, racinggameService.inputMoveTime());
 
-        System.out.println("실행 결과");
-        for (int i = 0; i <moveTime.getMoveTime() ; i++) {
-            cars.play();
-        }
-
-        ResultGame resultGame = new ResultGame(cars);
-        resultGame.aggregateWinners();
-        System.out.println(resultGame.displayResult());
+        racinggameService.showResult(cars);
     }
 }

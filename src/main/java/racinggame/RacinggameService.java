@@ -34,4 +34,15 @@ public class RacinggameService {
 		} while (true);
 	}
 
+	public void playGame(Cars cars, MoveTime moveTime) {
+		System.out.println("실행 결과");
+		for (int i = 0; i < moveTime.getMoveTime(); i++) {
+			cars.play();
+		}
+	}
+
+	public void showResult(Cars cars) {
+		ResultGame resultGame = new ResultGame(cars);
+		System.out.println(resultGame.displayResult());
+	}
 }

@@ -11,6 +11,8 @@ public class ResultGame {
 	public ResultGame(Cars cars) {
 		this.cars = cars;
 		this.winners = new ArrayList<>();
+
+		aggregateWinners();
 	}
 
 	/**
