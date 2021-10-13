@@ -3,6 +3,12 @@ package racinggame;
 import nextstep.utils.Console;
 
 public class RacinggameService {
+	/**
+	 * 유효한 이름 값이 입력될 때까지 반복 입력 받으며,
+	 * 최종 이름값을 InputCarName 객체로 반환한다.
+	 *
+	 * @return InputCarName
+	 */
 	public InputCarNames inputNames() {
 		InputCarNames inputCarNames = new InputCarNames();
 		String input;
@@ -16,10 +22,15 @@ public class RacinggameService {
 		return inputCarNames;
 	}
 
-	public InputNumber inputTime() {
+	/**
+	 * 숫자만 입력을 허용한다.
+	 *
+	 * @return InputNumber
+	 */
+	public MoveTime inputMoveTime() {
 		do {
 			System.out.println("시도할 회수는 몇회인가요?");
-			return new InputNumber(Console.readLine());
+			return new MoveTime(Console.readLine());
 		} while (true);
 	}
 

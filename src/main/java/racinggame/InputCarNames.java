@@ -1,5 +1,12 @@
 package racinggame;
 
+/**
+ * 자동차 이름 Class
+ * validation 기능과 문자열을 배열로 반환하는 기능을 포함한다.
+ *
+ * @author  eeyoresmin
+ * @version 1.0
+ */
 public class InputCarNames {
 	private static final String COMMA = ",";
 	private static final String MAX_SIZE_ERROR_MSG = "[ERROR] 최대 글자 수를 초과하였습니다.";
@@ -31,6 +38,12 @@ public class InputCarNames {
 		return inputCarNames.split(COMMA);
 	}
 
+	/**
+	 * 현재 문자열이 이름으로 적합한지 판단한다.
+	 *
+	 * @param inputValue
+	 * @return 유효값일 경우 true, 아니면 false
+	 */
 	public boolean validation(String inputValue) {
 		try {
 			checkInputCarNames(inputValue);
@@ -41,13 +54,24 @@ public class InputCarNames {
 		}
 	}
 
+	/**
+	 * 구분자로 구분하여 각 이름별로 체크한다.
+	 *
+	 * @param inputValue
+	 */
 	private void checkInputCarNames(String inputValue) {
 		for (String name : inputValue.split(COMMA)) {
 			isAvailable(name);
 		}
 	}
 
-	public boolean isAvailable(String name) {
+	/**
+	 * 실제 이름으로 유효한 값인지 체크한다.
+	 *
+	 * @param name
+	 * @return 유효할 경우 true, 아니면 예외 발생
+	 */
+	private boolean isAvailable(String name) {
 		if (name.length() < MIN_SIZE) {
 			throw new IllegalArgumentException(MIN_SIZE_ERROR_MSG);
 		}

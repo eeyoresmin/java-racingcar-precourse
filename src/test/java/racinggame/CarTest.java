@@ -24,7 +24,7 @@ public class CarTest {
 	@Test
 	@DisplayName("자동차 이동")
 	void 자동차_이동() {
-		car.move();
+		car.getCarPosition().movePosition();
 		assertThat(car.getCarPosition().getPosition()).isEqualTo(1);
 	}
 
