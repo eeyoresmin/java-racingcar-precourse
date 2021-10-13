@@ -34,6 +34,12 @@ public class RacinggameService {
 		} while (true);
 	}
 
+	/**
+	 * 입력받은 MoveTime만큼 각 자동차 play 시작한다.
+	 *
+	 * @param cars
+	 * @param moveTime
+	 */
 	public void playGame(Cars cars, MoveTime moveTime) {
 		System.out.println("실행 결과");
 		for (int i = 0; i < moveTime.getMoveTime(); i++) {
@@ -41,6 +47,11 @@ public class RacinggameService {
 		}
 	}
 
+	/**
+	 * 자동차 경주의 결과를 계산하여 보여준다.
+	 *
+	 * @param cars
+	 */
 	public void showResult(Cars cars) {
 		ResultGame resultGame = new ResultGame(cars);
 		System.out.println(resultGame.displayResult());
