@@ -36,6 +36,7 @@ public class InputCarNames {
 			checkInputCarNames(inputValue);
 			return true;
 		} catch (IllegalArgumentException e) {
+			System.out.println(e);
 			return false;
 		}
 	}
